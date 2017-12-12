@@ -34,10 +34,14 @@ void setup() {
 }
 
 void loop() {
+  int i;
   //Serial.println(analogRead(BUTTON));
-  refreshLife();
-  refreshPixelArray();
-  displayPixelArray();
+  for (i = 0; i < 100; i++) {
+    refreshLife();
+      refreshPixelArray();
+      displayPixelArray();
+  }
+  randomLifeStart();
  // Serial.println(1);
 }
 
@@ -147,7 +151,7 @@ void displayPixelArray() {
               digitalWrite(rows[row], HIGH);
               digitalWrite(cols[col], LOW);
 
-              delayMicroseconds<(0);
+              delayMicroseconds(10);
 
               digitalWrite(rows[row], LOW);
               digitalWrite(cols[col], HIGH);
